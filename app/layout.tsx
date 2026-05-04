@@ -21,20 +21,27 @@ export const metadata: Metadata = {
     template: '%s | Mento Academy',
   },
   description: 'La primera plataforma de capacitación para industrias basada en ciencia cognitiva y validada por expertos. Microlearning, video-first y gamificación para personal operativo.',
-  metadataBase: new URL('https://mento.lat'),
+  metadataBase: new URL('https://landingmentoacademy.vercel.app'),
   openGraph: {
-    title: 'Mento Academy — Aprender haciendo, no mirando',
-    description: 'Capacitación con IA que sí entrena. Roleplay por voz, evaluación inmediata, sin manuales.',
-    url: 'https://mento.lat',
+    title: 'Mento Academy — Capacitación Industrial de Alto Impacto',
+    description: 'La primera plataforma de capacitación para industrias basada en ciencia cognitiva. Microlearning, video-first y gamificación para personal operativo.',
+    url: 'https://landingmentoacademy.vercel.app',
     siteName: 'Mento Academy',
     locale: 'es_AR',
     type: 'website',
-    images: ['/og-image.png'],
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Mento Academy',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Mento Academy',
-    description: 'Aprender haciendo, no mirando.',
+    description: 'Capacitación industrial basada en ciencia cognitiva.',
     images: ['/og-image.png'],
   },
   icons: {

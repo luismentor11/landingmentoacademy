@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* === Paleta principal === */
+  --color-primary:       #2E4A6B;  /* Azul Mento */
+  --color-primary-dark:  #1F3450;
+  --color-accent:        #7E3A5F;  /* Vino Academy */
+  --color-cta:           #C5577A;  /* Magenta CTA */
+  --color-cta-hover:     #D96B8E;
+  --color-bg:            #0B1827;  /* Deep Navy (dark mode default) */
+  --color-surface:       #162539;
+  --color-elevated:      #15263B;
+  --color-text:          #E8ECF1;
+  --color-muted:         #8A9BB0;
+  --color-light-bg:      #F8F6F4;  /* Warm White (para secciones light) */
+  --color-light-text:    #2E4A6B;
+
+  /* === Tipografía === */
+  --font-primary:        'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono:           'JetBrains Mono', 'Courier New', monospace;
+
+  /* === Border radius === */
+  --radius-xs:           4px;
+  --radius-sm:           8px;
+  --radius-md:           12px;
+  --radius-lg:           16px;
+  --radius-xl:           20px;
+  --radius-full:         100px;
+
+  /* === Spacing (8pt grid — único permitido) === */
+  --space-xs:            8px;
+  --space-sm:            16px;
+  --space-md:            24px;
+  --space-lg:            32px;
+  --space-xl:            48px;
+  --space-2xl:           64px;
+  --space-3xl:           80px;
+  --space-4xl:           96px;
+
+  /* === Gradients oficiales (no inventar otros) === */
+  --gradient-azul-vino:    linear-gradient(135deg, #2E4A6B, #7E3A5F);
+  --gradient-vino-magenta: linear-gradient(135deg, #7E3A5F, #C5577A);
+  --gradient-deep-azul:    linear-gradient(135deg, #0B1827, #2E4A6B);
+  --gradient-azul-magenta: linear-gradient(135deg, #1F3450, #C5577A);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 9999px;
+  border: 2px solid var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}

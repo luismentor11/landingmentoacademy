@@ -36,7 +36,7 @@ export const Footer = () => {
               <span className="text-caption font-medium text-mento-muted uppercase tracking-widest">Academy</span>
             </Link>
             <p className="text-body text-mento-muted max-w-xs mb-mento-md">
-              Capacitación de alto impacto con base científica y validación industrial.
+              Capacitación basada en aprendizaje experiencial y simulación inmersiva para anclar el conocimiento en la práctica real.
             </p>
             <div className="text-caption text-mento-muted/50">
               © {new Date().getFullYear()} Mento Academy. Todos los derechos reservados.

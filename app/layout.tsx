@@ -17,32 +17,32 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Mento Academy — Capacitación Industrial de Alto Impacto',
+    default: 'Mento Academy — Formato Innovador de Capacitación',
     template: '%s | Mento Academy',
   },
-  description: 'La primera plataforma de capacitación para industrias basada en ciencia cognitiva y validada por expertos. Microlearning, video-first y gamificación para personal operativo.',
+  description: 'Aprendizaje experiencial y simulación inmersiva para trascender la teoría y anclar el conocimiento en la práctica real. Metodología activa donde el participante es el protagonista.',
   metadataBase: new URL('https://www.mento.lat'),
   openGraph: {
-    title: 'Mento Academy — Capacitación Industrial de Alto Impacto',
-    description: 'La primera plataforma de capacitación para industrias basada en ciencia cognitiva. Microlearning, video-first y gamificación para personal operativo.',
+    title: 'Mento Academy — Formato Innovador de Capacitación',
+    description: 'Capacitación fundamentada en aprendizaje experiencial y simulación inmersiva (role-play) para anclar el conocimiento en la práctica real. Una metodología activa y transformadora.',
     url: 'https://www.mento.lat',
     siteName: 'Mento Academy',
     locale: 'es_AR',
     type: 'website',
     images: [
       {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Mento Academy',
+        url: '/mentito.png',
+        width: 1024,
+        height: 1024,
+        alt: 'Mentito - Mento Academy',
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     title: 'Mento Academy',
-    description: 'Capacitación industrial basada en ciencia cognitiva.',
-    images: ['/og-image.png'],
+    description: 'Capacitación innovadora basada en aprendizaje experiencial.',
+    images: ['/mentito.png'],
   },
   icons: {
     icon: '/favicon.png',

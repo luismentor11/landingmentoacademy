@@ -21,11 +21,11 @@ export const metadata: Metadata = {
     template: '%s | Mento Academy',
   },
   description: 'La primera plataforma de capacitación para industrias basada en ciencia cognitiva y validada por expertos. Microlearning, video-first y gamificación para personal operativo.',
-  metadataBase: new URL('https://landingmentoacademy.vercel.app'),
+  metadataBase: new URL('https://www.mento.lat'),
   openGraph: {
     title: 'Mento Academy — Capacitación Industrial de Alto Impacto',
     description: 'La primera plataforma de capacitación para industrias basada en ciencia cognitiva. Microlearning, video-first y gamificación para personal operativo.',
-    url: 'https://landingmentoacademy.vercel.app',
+    url: 'https://www.mento.lat',
     siteName: 'Mento Academy',
     locale: 'es_AR',
     type: 'website',

@@ -24,12 +24,9 @@ const sizeMap: Record<MentitoSize, { width: number; height: number; className: s
 export function Mentito({ size = 'md', className, priority = false }: MentitoProps) {
   const dims = sizeMap[size];
   return (
-    <div
-      className={cn(dims.className, className)}
-      style={{ filter: 'hue-rotate(300deg)' }}
-    >
+    <div className={cn(dims.className, className)} style={{ mixBlendMode: 'screen' }}>
       <Image
-        src="/mentito-base.png"
+        src="/mentito.png"
         alt="Mentito, coach de Mento Academy"
         width={dims.width}
         height={dims.height}

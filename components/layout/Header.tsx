@@ -6,6 +6,7 @@ import { Menu, X } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/cn';
+import { Mentito } from '@/components/ui/Mentito';
 
 const navLinks = [
   { name: 'Método', href: '/metodo' },
@@ -22,9 +23,12 @@ export const Header = () => {
       <Container>
         <div className="flex items-center justify-between h-mento-2xl">
           {/* Logo */}
-          <Link href="/" className="flex flex-col">
-            <span className="text-h3 font-extrabold text-mento-text leading-none">Mento</span>
-            <span className="text-caption font-medium text-mento-muted uppercase tracking-widest">Academy</span>
+          <Link href="/" className="flex items-center space-x-mento-sm">
+            <Mentito size="sm" className="w-8 h-10" />
+            <div className="flex flex-col">
+              <span className="text-h3 font-extrabold text-mento-text leading-none">Mento</span>
+              <span className="text-caption font-medium text-mento-muted uppercase tracking-widest">Academy</span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

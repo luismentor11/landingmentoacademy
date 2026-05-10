@@ -8,11 +8,17 @@ import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/cn';
 import { Mentito } from '@/components/ui/Mentito';
 
-const navLinks = [
+const desktopNavLinks = [
   { name: 'Método', href: '/metodo' },
   { name: 'Industrias', href: '/industrias' },
   { name: 'Ciencia', href: '/ciencia' },
-  { name: 'Capacitadores', href: '/capacitadores' },
+];
+
+const mobileNavLinks = [
+  { name: 'Método', href: '/metodo' },
+  { name: 'Industrias', href: '/industrias' },
+  { name: 'Ciencia', href: '/ciencia' },
+  { name: 'Para capacitadores', href: '/capacitadores' },
 ];
 
 export const Header = () => {
@@ -33,7 +39,7 @@ export const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-mento-lg">
-            {navLinks.map((link) => (
+            {desktopNavLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
@@ -46,11 +52,12 @@ export const Header = () => {
 
           {/* Desktop CTAs */}
           <div className="hidden md:flex items-center space-x-mento-md">
+            <span className="w-px h-5 bg-white/10" aria-hidden="true" />
             <Button variant="ghost" size="sm" href="https://app.mento.lat/login">
               Ingresar
             </Button>
-            <Button variant="primary" size="sm" href="https://app.mento.lat/signup">
-              Probar gratis
+            <Button variant="primary" size="sm" href="/demo">
+              Solicitá una demo
             </Button>
           </div>
 
@@ -74,7 +81,7 @@ export const Header = () => {
       >
         <Container className="py-mento-xl space-y-mento-xl">
           <nav className="flex flex-col space-y-mento-lg">
-            {navLinks.map((link) => (
+            {mobileNavLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
@@ -89,8 +96,8 @@ export const Header = () => {
             <Button variant="outline" size="lg" href="https://app.mento.lat/login" className="w-full">
               Ingresar
             </Button>
-            <Button variant="primary" size="lg" href="https://app.mento.lat/signup" className="w-full">
-              Probar gratis
+            <Button variant="primary" size="lg" href="/demo" className="w-full">
+              Solicitá una demo
             </Button>
           </div>
         </Container>

@@ -1,93 +1,89 @@
 import React from 'react';
+import Link from 'next/link';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
-import { Button } from '@/components/ui/Button';
-import { CheckCircle2, PlayCircle, Trophy, Zap } from 'lucide-react';
 
-const pillars = [
+const steps = [
   {
-    icon: <Zap className="text-mento-accent" size={32} />,
-    title: 'Microlearning',
-    description: 'Lecciones de 3 a 5 minutos diseñadas para la atención del personal operativo.',
+    number: '01',
+    title: 'Inmersión y Contextualización',
+    description:
+      'Antes de simular, el participante comprende el escenario: el cliente, el contexto, los objetivos de la conversación. La IA presenta el caso con el nivel de dificultad configurado para ese equipo.',
+    tags: ['Duración: 2-3 min'],
   },
   {
-    icon: <PlayCircle className="text-mento-accent" size={32} />,
-    title: 'Video-First',
-    description: 'Contenido visual de alta calidad que elimina las barreras de la lectoescritura.',
+    number: '02',
+    title: 'Simulación Activa con IA',
+    description:
+      'El participante conduce la conversación. La IA responde como un cliente o interlocutor real, adaptando sus reacciones en tiempo real según las decisiones tomadas. Sin guión rígido. Sin respuestas predecibles.',
+    tags: ['Hiper-Realismo Adaptativo', 'IA multiagente'],
   },
   {
-    icon: <Trophy className="text-mento-accent" size={32} />,
-    title: 'Gamificación',
-    description: 'Sistemas de recompensas y rankings que fomentan la competencia sana.',
-  },
-  {
-    icon: <CheckCircle2 className="text-mento-accent" size={32} />,
-    title: 'Validación Real',
-    description: 'Evaluaciones prácticas que aseguran la aplicación real del conocimiento.',
+    number: '03',
+    title: 'Debriefing y Feedback por Competencias',
+    description:
+      'Al terminar la simulación, el sistema analiza el desempeño y entrega feedback específico: qué funcionó, qué falló y por qué. No mide si terminó el módulo. Mide si demostró la competencia.',
+    tags: ['Feedback 360°', 'Métricas reales'],
   },
 ];
 
-export const Method = () => {
+export const HowItWorksSection = () => {
   return (
     <Section variant="default">
       <Container>
-        <div className="flex flex-col lg:flex-row gap-mento-2xl items-center">
-          <div className="lg:w-1/2 flex flex-col space-y-mento-lg">
-            <h2 className="text-h2 font-bold text-gradient">
-              El Método Mento: Diseñado para aprender haciendo.
-            </h2>
-            <p className="text-body-lg text-mento-muted">
-              No somos solo una plataforma de videos. Somos un ecosistema de aprendizaje optimizado para entornos industriales donde el tiempo es oro y la precisión es vital.
-            </p>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-mento-md pt-mento-md">
-              {pillars.map((pillar) => (
-                <div key={pillar.title} className="flex flex-col space-y-mento-xs p-mento-md bg-white/5 border border-white/5 rounded-mento-md hover:bg-white/10 transition-colors">
-                  {pillar.icon}
-                  <h3 className="text-h4 font-bold text-mento-text">{pillar.title}</h3>
-                  <p className="text-caption text-mento-muted">{pillar.description}</p>
-                </div>
-              ))}
-            </div>
+        <div className="max-w-3xl mx-auto text-center mb-mento-2xl">
+          <p className="text-caption font-semibold text-mento-muted uppercase tracking-widest mb-mento-sm">
+            El método
+          </p>
+          <h2 className="text-h2 font-bold text-mento-text mb-mento-md">
+            Tres fases. Una sola consecuencia: equipos que saben actuar.
+          </h2>
+          <p className="text-caption text-mento-muted/70">
+            Basado en el Ciclo de Aprendizaje Experiencial de David Kolb (1984) e implementado con IA generativa adaptativa.{' '}
+            <Link href="/ciencia" className="underline underline-offset-2 hover:text-mento-text transition-colors">
+              Ver la ciencia detrás
+            </Link>
+          </p>
+        </div>
 
-            <div className="pt-mento-lg">
-              <Button variant="primary" href="/metodo">
-                Explorar el método completo
-              </Button>
-            </div>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-mento-lg relative">
+          {/* Connector line desktop */}
+          <div className="hidden md:block absolute top-10 left-[calc(16.67%+1rem)] right-[calc(16.67%+1rem)] h-px bg-white/10" aria-hidden="true" />
 
-          <div className="lg:w-1/2 relative">
-            <div className="aspect-video bg-mento-surface rounded-mento-lg border border-white/10 shadow-mento-lg overflow-hidden flex items-center justify-center group cursor-pointer">
-              {/* Placeholder for methodology video or interactive graphic */}
-              <div className="absolute inset-0 bg-gradient-to-t from-mento-bg/80 to-transparent z-10" />
-              <div className="relative z-20 flex flex-col items-center gap-mento-md group-hover:scale-110 transition-transform">
-                <div className="w-20 h-20 rounded-full bg-mento-accent flex items-center justify-center shadow-mento-glow">
-                  <PlayCircle size={40} className="text-white fill-white" />
-                </div>
-                <span className="text-h4 font-bold text-white uppercase tracking-widest">Ver demo</span>
+          {steps.map((step) => (
+            <div key={step.number} className="relative flex flex-col gap-mento-md p-mento-xl bg-mento-surface border border-white/8 rounded-mento-lg hover:border-white/15 transition-colors">
+              <span className="text-[4rem] font-extrabold leading-none text-white/8 select-none">
+                {step.number}
+              </span>
+              <div>
+                <h3 className="text-h4 font-bold text-mento-text mb-mento-sm">
+                  {step.title}
+                </h3>
+                <p className="text-body text-mento-muted">
+                  {step.description}
+                </p>
               </div>
-              {/* Mock interface elements */}
-              <div className="absolute top-mento-md left-mento-md z-20 flex gap-mento-xs">
-                <div className="h-2 w-12 bg-mento-accent rounded-full" />
-                <div className="h-2 w-12 bg-white/20 rounded-full" />
-                <div className="h-2 w-12 bg-white/20 rounded-full" />
-              </div>
-            </div>
-            
-            {/* Floating UI elements */}
-            <div className="absolute -bottom-6 -right-6 p-mento-md bg-mento-elevated border border-white/10 rounded-mento-md shadow-mento-lg hidden md:block">
-              <div className="flex items-center gap-mento-sm">
-                <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
-                  <CheckCircle2 size={20} className="text-green-500" />
-                </div>
-                <div>
-                  <div className="text-caption font-bold text-white">Certificación</div>
-                  <div className="text-[10px] text-mento-muted">Seguridad Industrial Nivel 1</div>
-                </div>
+              <div className="flex flex-wrap gap-mento-xs mt-auto pt-mento-sm">
+                {step.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="inline-flex items-center px-mento-sm py-1 rounded-mento-full bg-mento-primary/20 border border-mento-primary/30 text-caption font-medium text-mento-text/80"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
-          </div>
+          ))}
+        </div>
+
+        <div className="mt-mento-2xl text-center">
+          <Link
+            href="/metodo"
+            className="text-body font-medium text-mento-muted hover:text-mento-text transition-colors"
+          >
+            Ver metodología completa →
+          </Link>
         </div>
       </Container>
     </Section>

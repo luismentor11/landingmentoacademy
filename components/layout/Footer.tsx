@@ -16,7 +16,7 @@ const footerLinks = [
   {
     title: 'Recursos',
     links: [
-      { name: 'Pedir Vertical', href: '/pedir-vertical' },
+      { name: 'Solicitar demo', href: '/demo' },
       { name: 'Soporte', href: 'mailto:hola@mento.lat' },
       { name: 'Términos', href: '/terms' },
       { name: 'Privacidad', href: '/privacy' },
@@ -36,7 +36,7 @@ export const Footer = () => {
               <span className="text-caption font-medium text-mento-muted uppercase tracking-widest">Academy</span>
             </Link>
             <p className="text-body text-mento-muted max-w-xs mb-mento-md">
-              Capacitación basada en aprendizaje experiencial y simulación inmersiva para anclar el conocimiento en la práctica real.
+              Entrenamos las conversaciones que definen resultados.
             </p>
             <div className="text-caption text-mento-muted/50">
               © {new Date().getFullYear()} Mento Academy. Todos los derechos reservados.
@@ -68,7 +68,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-mento-2xl pt-mento-lg border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-mento-md">
           <p className="text-caption text-mento-muted/50">
-            Enfocado en la excelencia operacional y el desarrollo de talento.
+            Entrenamos las conversaciones que definen resultados.
           </p>
           <div className="flex space-x-mento-md">
             <a href="https://linkedin.com/company/mento-lat" target="_blank" rel="noopener noreferrer" className="text-mento-muted hover:text-mento-accent transition-colors">

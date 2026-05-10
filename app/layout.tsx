@@ -17,14 +17,14 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Mento Academy — Formato Innovador de Capacitación',
+    default: 'Mento Academy — Roleplay con IA para equipos de ventas y atención al cliente',
     template: '%s | Mento Academy',
   },
-  description: 'Aprendizaje experiencial y simulación inmersiva para trascender la teoría y anclar el conocimiento en la práctica real. Metodología activa donde el participante es el protagonista.',
+  description: 'Plataforma de simulación con IA para entrenar habilidades conversacionales. Ventas, negociación y atención al cliente. Prueba institucional disponible.',
   metadataBase: new URL('https://www.mento.lat'),
   openGraph: {
-    title: 'Mento Academy — Formato Innovador de Capacitación',
-    description: 'Capacitación fundamentada en aprendizaje experiencial y simulación inmersiva (role-play) para anclar el conocimiento en la práctica real. Una metodología activa y transformadora.',
+    title: 'Mento Academy — Entrenamiento con IA para equipos B2B',
+    description: 'Tu equipo practica conversaciones difíciles con IA antes de que cuesten dinero real. Demo institucional en 30 minutos.',
     url: 'https://www.mento.lat',
     siteName: 'Mento Academy',
     locale: 'es_AR',
@@ -40,8 +40,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary',
-    title: 'Mento Academy',
-    description: 'Capacitación innovadora basada en aprendizaje experiencial.',
+    title: 'Mento Academy — Roleplay con IA para equipos',
+    description: 'Simulaciones adaptativas para equipos de ventas, atención al cliente y negociación. B2B. Argentina.',
     images: ['/mentito.png'],
   },
   icons: {

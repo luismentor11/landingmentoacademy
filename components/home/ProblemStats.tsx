@@ -1,63 +1,79 @@
 import React from 'react';
+import { Target, Timer, TrendingDown } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
 import { Card } from '@/components/ui/Card';
 
-const stats = [
+const painPoints = [
   {
-    value: '70%',
-    label: 'del personal operativo',
-    description: 'no recibe capacitación estructurada en su primer año.',
-    color: 'accent',
+    icon: Target,
+    stat: '68%',
+    statLabel: 'de empleados no presta atención a videos de capacitación',
+    source: '(Research.com, 2026)',
+    description:
+      'El formato pasivo no funciona para habilidades conversacionales. Ver cómo se hace no es lo mismo que practicarlo.',
   },
   {
-    value: '40%',
-    label: 'de rotación anual',
-    description: 'promedio en posiciones de alta demanda técnica.',
-    color: 'primary',
+    icon: Timer,
+    stat: '40%',
+    statLabel: 'de rotación anual en posiciones de alta demanda conversacional',
+    source: null,
+    description:
+      'Un agente sin confianza en sus conversaciones abandona o quema oportunidades. El costo de reemplazarlo supera 6 meses de salario.',
   },
   {
-    value: '22%',
-    label: 'pérdida de eficiencia',
-    description: 'por falta de estandarización en procesos críticos.',
-    color: 'cta',
+    icon: TrendingDown,
+    stat: '1ra semana',
+    statLabel: null,
+    source: null,
+    description:
+      'Es cuando se pierden más deals y se generan más quejas. El personal nuevo aprende en vivo con clientes reales porque no hay otra opción.',
   },
 ];
 
-export const ProblemStats = () => {
+export const ProblemSection = () => {
   return (
     <Section variant="surface">
       <Container>
         <div className="max-w-3xl mx-auto text-center mb-mento-2xl">
+          <p className="text-caption font-semibold text-mento-muted uppercase tracking-widest mb-mento-sm">
+            El problema que ningún manual resuelve
+          </p>
           <h2 className="text-h2 font-bold text-mento-text mb-mento-md">
-            El costo invisible de la falta de capacitación
+            La capacitación tradicional enseña el qué.
+            <br />
+            <span className="text-mento-muted font-medium">Nadie entrena el cómo.</span>
           </h2>
           <p className="text-body-lg text-mento-muted">
-            Las industrias enfrentan desafíos críticos que impactan directamente en su rentabilidad y seguridad. Mento Academy ataca la raíz del problema.
+            Tus vendedores leyeron el manual. Asistieron al taller. Aprobaron el examen. Pero cuando llega el cliente difícil, improvisan. Porque el conocimiento teórico no es práctica real.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-mento-lg">
-          {stats.map((stat) => (
-            <Card key={stat.label} variant="elevated" className="text-center group hover:border-mento-accent/30 transition-all">
-              <div className={`text-display font-extrabold text-mento-${stat.color} mb-mento-xs group-hover:scale-110 transition-transform`}>
-                {stat.value}
+          {painPoints.map((point) => (
+            <Card key={point.stat} variant="elevated" className="flex flex-col gap-mento-md group hover:border-mento-accent/30 transition-all">
+              <point.icon className="w-6 h-6 text-mento-cta flex-shrink-0" strokeWidth={1.75} />
+              <div>
+                <div className="text-display font-extrabold text-mento-cta leading-none mb-mento-xs group-hover:scale-105 transition-transform origin-left">
+                  {point.stat}
+                </div>
+                {point.statLabel && (
+                  <p className="text-body font-medium text-mento-text">
+                    {point.statLabel}
+                    {point.source && (
+                      <span className="ml-1 text-caption text-mento-muted/60">{point.source}</span>
+                    )}
+                  </p>
+                )}
               </div>
-              <div className="text-h4 font-bold text-mento-text mb-mento-xs">
-                {stat.label}
-              </div>
-              <p className="text-body text-mento-muted">
-                {stat.description}
-              </p>
+              <p className="text-body text-mento-muted">{point.description}</p>
             </Card>
           ))}
         </div>
 
-        <div className="mt-mento-2xl p-mento-xl bg-mento-bg/50 border border-white/5 rounded-mento-lg text-center">
-          <p className="text-h3 font-medium text-mento-text italic">
-            "La brecha de habilidades operativas es el principal obstáculo para la industria 4.0 en Latinoamérica."
-          </p>
-        </div>
+        <p className="mt-mento-2xl text-h4 font-medium text-center text-mento-cta">
+          Mento cambia eso. Tu equipo practica antes de que el error tenga costo.
+        </p>
       </Container>
     </Section>
   );

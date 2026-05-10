@@ -1,86 +1,115 @@
 import React from 'react';
+import Link from 'next/link';
+import { Home, BarChart2, MessageCircle } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
 import { Button } from '@/components/ui/Button';
-import { Card } from '@/components/ui/Card';
-import { Truck, ShoppingCart, HardHat, Soup } from 'lucide-react';
 
 const industries = [
   {
-    icon: <Truck size={32} />,
-    title: 'Logística & Depósitos',
-    courses: '12 cursos',
-    description: 'Gestión de stock, seguridad en autoelevadores y picking eficiente.',
+    Icon: Home,
+    title: 'Inmobiliarias y Ventas',
+    pain: 'Tu agente nuevo aprende a manejar objeciones en su primera operación real. Eso tiene un costo.',
+    solution:
+      'Simulamos al cliente que quiere bajar el precio, al que "tiene que consultarlo con la familia" y al que compara con 3 propiedades más. Antes de que llegue de verdad.',
+    scenarios: [
+      'Manejo de objeción de precio',
+      'Seguimiento post-visita sin presionar',
+      'Cierre en contexto de alta competencia',
+    ],
   },
   {
-    icon: <ShoppingCart size={32} />,
-    title: 'Retail & Consumo',
-    courses: '8 cursos',
-    description: 'Atención al cliente, reposición y control de mermas.',
+    Icon: BarChart2,
+    title: 'Seguros y Servicios Financieros',
+    pain: 'El asesor que no cierra en la segunda llamada, no cierra nunca. La diferencia está en cómo maneja los primeros 90 segundos de resistencia.',
+    solution:
+      'Practicamos las 8 objeciones más frecuentes en productos de seguros y finanzas hasta que la respuesta es reflejo, no esfuerzo.',
+    scenarios: [
+      'Objeción de precio en pólizas',
+      'Explicación de producto complejo sin perder al cliente',
+      'Reactivación de leads fríos',
+    ],
   },
   {
-    icon: <HardHat size={32} />,
-    title: 'Construcción',
-    courses: '15 cursos',
-    description: 'Normativas de seguridad, uso de herramientas y prevención de riesgos.',
-  },
-  {
-    icon: <Soup size={32} />,
-    title: 'Gastronomía',
-    courses: '10 cursos',
-    description: 'Bromatología, servicio de salón y eficiencia en cocina.',
+    Icon: MessageCircle,
+    title: 'Atención al Cliente',
+    pain: 'Un cliente enojado no quiere un protocolo. Quiere sentirse escuchado. Eso no se aprende leyendo un manual.',
+    solution:
+      'Entrenamos empatía, desescalada y resolución bajo presión con simulaciones de clientes reales: el impaciente, el agresivo, el que amenaza con irse.',
+    scenarios: [
+      'Desescalada de cliente furioso',
+      'Gestión de queja sin poder dar solución inmediata',
+      'Retención de cliente que quiere cancelar',
+    ],
   },
 ];
 
-export const Industries = () => {
+export const IndustriesSection = () => {
   return (
     <Section variant="surface">
       <Container>
-        <div className="flex flex-col md:flex-row justify-between items-end gap-mento-lg mb-mento-2xl">
-          <div className="max-w-2xl">
-            <h2 className="text-h2 font-bold text-mento-text mb-mento-md">
-              Especialización por Industria
-            </h2>
-            <p className="text-body-lg text-mento-muted">
-              Contamos con contenido curado por expertos para cada vertical de negocio. Si no encontrás la tuya, la creamos a medida.
-            </p>
-          </div>
-          <Button variant="outline" href="/industrias">
-            Ver catálogo completo
-          </Button>
+        <div className="max-w-3xl mx-auto text-center mb-mento-2xl">
+          <p className="text-caption font-semibold text-mento-muted uppercase tracking-widest mb-mento-sm">
+            Industrias
+          </p>
+          <h2 className="text-h2 font-bold text-mento-text mb-mento-md">
+            Conversaciones que se ganan o se pierden.
+            <br />
+            <span className="text-mento-muted font-medium">Mento entrena las que más importan.</span>
+          </h2>
+          <p className="text-body-lg text-mento-muted">
+            Cada industria tiene sus conversaciones críticas. Mento las identifica, las simula y mide si tu equipo está listo.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-mento-lg">
-          {industries.map((industry) => (
-            <Card key={industry.title} variant="elevated" className="group cursor-pointer hover:bg-mento-bg transition-colors">
-              <div className="w-14 h-14 rounded-mento-md bg-white/5 flex items-center justify-center text-mento-accent mb-mento-md group-hover:scale-110 transition-transform">
-                {industry.icon}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-mento-lg">
+          {industries.map(({ Icon, title, pain, solution, scenarios }) => (
+            <div
+              key={title}
+              className="flex flex-col gap-mento-md p-mento-xl bg-mento-elevated border border-white/8 rounded-mento-lg hover:border-white/15 transition-colors"
+            >
+              <div className="w-10 h-10 rounded-mento-md bg-mento-primary/20 flex items-center justify-center flex-shrink-0">
+                <Icon size={20} className="text-mento-cta" strokeWidth={1.75} />
               </div>
-              <div className="flex justify-between items-start mb-mento-xs">
-                <h3 className="text-h4 font-bold text-mento-text">{industry.title}</h3>
-                <span className="text-[10px] font-bold text-mento-muted uppercase tracking-widest bg-white/5 px-2 py-1 rounded-full">
-                  {industry.courses}
-                </span>
-              </div>
-              <p className="text-body text-mento-muted">
-                {industry.description}
+
+              <h3 className="text-h4 font-bold text-mento-text">{title}</h3>
+
+              <p className="text-body text-mento-muted/80 italic border-l-2 border-mento-cta/30 pl-mento-md">
+                {pain}
               </p>
-              <div className="mt-mento-md flex items-center gap-2 text-caption font-bold text-mento-accent opacity-0 group-hover:opacity-100 transition-opacity">
-                Ver contenido <span>→</span>
-              </div>
-            </Card>
+
+              <p className="text-body text-mento-muted">{solution}</p>
+
+              <ul className="flex flex-col gap-mento-xs mt-auto">
+                {scenarios.map((s) => (
+                  <li key={s} className="flex items-start gap-mento-xs text-caption text-mento-muted/70">
+                    <span className="mt-0.5 w-1 h-1 rounded-full bg-mento-cta flex-shrink-0" aria-hidden="true" />
+                    {s}
+                  </li>
+                ))}
+              </ul>
+
+              <Link
+                href="/industrias"
+                className="mt-mento-sm text-caption font-bold text-mento-cta hover:text-mento-text transition-colors"
+              >
+                Ver escenarios →
+              </Link>
+            </div>
           ))}
         </div>
 
-        <div className="mt-mento-2xl flex flex-col items-center p-mento-xl bg-gradient-azul-vino rounded-mento-lg text-center">
-          <h3 className="text-h3 font-bold text-white mb-mento-md">
-            ¿Tu industria requiere capacitación específica?
-          </h3>
-          <p className="text-body text-white/80 max-w-xl mb-mento-lg">
-            Desarrollamos verticales personalizadas para empresas con procesos únicos. Validamos el contenido con tus propios expertos.
-          </p>
-          <Button variant="primary" href="/pedir-vertical" className="bg-white text-mento-accent hover:bg-white/90">
-            Solicitar vertical personalizada
+        <div className="mt-mento-2xl p-mento-xl bg-mento-surface border border-white/8 rounded-mento-lg flex flex-col md:flex-row items-center justify-between gap-mento-lg">
+          <div>
+            <h3 className="text-h4 font-bold text-mento-text mb-mento-xs">
+              ¿Tu industria tiene conversaciones críticas específicas?
+            </h3>
+            <p className="text-body text-mento-muted max-w-xl">
+              Desarrollamos verticales personalizadas con tus propios escenarios, tu vocabulario y los casos reales de tu equipo.
+            </p>
+          </div>
+          <Button variant="outline" href="/demo" className="flex-shrink-0">
+            Hablar con el equipo →
           </Button>
         </div>
       </Container>

@@ -1,11 +1,12 @@
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Hero } from '@/components/home/Hero';
-import { ProblemStats } from '@/components/home/ProblemStats';
-import { Method } from '@/components/home/Method';
-import { Industries } from '@/components/home/Industries';
-import { ScienceTeaser } from '@/components/home/ScienceTeaser';
-import { ForTrainers } from '@/components/home/ForTrainers';
+import { ProblemSection } from '@/components/home/ProblemStats';
+import { HowItWorksSection } from '@/components/home/Method';
+import { IndustriesSection } from '@/components/home/Industries';
+import { SocialProofSection } from '@/components/home/SocialProof';
+import { ScienceSection } from '@/components/home/ScienceTeaser';
+import { ForLeadersSection } from '@/components/home/ForTrainers';
 import { FinalCTA } from '@/components/home/FinalCTA';
 
 export default function Home() {
@@ -13,11 +14,12 @@ export default function Home() {
     <main className="min-h-screen bg-mento-bg">
       <Header />
       <Hero />
-      <ProblemStats />
-      <Method />
-      <Industries />
-      <ScienceTeaser />
-      <ForTrainers />
+      <ProblemSection />
+      <HowItWorksSection />
+      <IndustriesSection />
+      <SocialProofSection />
+      <ScienceSection />
+      <ForLeadersSection />
       <FinalCTA />
       <Footer />
     </main>

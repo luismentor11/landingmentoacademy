@@ -1,60 +1,73 @@
 import React from 'react';
+import Link from 'next/link';
+import { Brain, RefreshCw, TrendingUp } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
-import { Button } from '@/components/ui/Button';
-import { Brain, Microscope, BarChart3 } from 'lucide-react';
 
-export const ScienceTeaser = () => {
+const pillars = [
+  {
+    Icon: Brain,
+    title: 'El cerebro aprende haciendo, no mirando',
+    body: 'Cuando una persona participa en una simulación, activa las mismas redes neuronales que activaría en la situación real. Esto genera "huellas de memoria" más profundas y duraderas que las producidas por la exposición pasiva a contenido.',
+    citation:
+      'Mariani, L. (2020). The Neurosciences Underlying the Models of Digital Role Play. SkillGym.',
+  },
+  {
+    Icon: RefreshCw,
+    title: 'El Ciclo de Kolb como arquitectura del método',
+    body: 'El formato de Mento sigue las cuatro etapas del Aprendizaje Experiencial: experiencia concreta (la simulación), observación reflexiva (el debriefing), conceptualización abstracta (el feedback por competencias) y experimentación activa (el próximo escenario con mayor dificultad).',
+    citation: 'Kolb, D. A. (1984). Experiential Learning. Adaptado por isEazy (2026).',
+  },
+  {
+    Icon: TrendingUp,
+    title: 'El mercado B2B está migrando al roleplay con IA',
+    body: 'Para 2026, el roleplay impulsado por IA se consolidó como el método preferido para el desarrollo de soft skills en organizaciones. Las empresas abandonan los videos estáticos —donde el 68% de los empleados admite no prestar atención— en favor de simulaciones interactivas.',
+    citation:
+      'Easygenerator (2026). Best AI roleplay tools for corporate training. / Research.com (2026). 28 Video Training Statistics.',
+  },
+];
+
+export const ScienceSection = () => {
   return (
     <Section variant="default" className="border-y border-white/5">
       <Container>
-        <div className="flex flex-col lg:flex-row items-center gap-mento-2xl">
-          <div className="lg:w-1/3 grid grid-cols-1 gap-mento-lg">
-            <div className="flex items-start gap-mento-md">
-              <div className="p-mento-sm bg-white/5 rounded-mento-md">
-                <Brain size={24} className="text-mento-accent" />
-              </div>
-              <div>
-                <h4 className="text-body font-bold text-mento-text">Neurociencia Aplicada</h4>
-                <p className="text-caption text-mento-muted">Optimizamos la carga cognitiva para maximizar la retención.</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-mento-md">
-              <div className="p-mento-sm bg-white/5 rounded-mento-md">
-                <Microscope size={24} className="text-mento-accent" />
-              </div>
-              <div>
-                <h4 className="text-body font-bold text-mento-text">Pedagogía Moderna</h4>
-                <p className="text-caption text-mento-muted">Metodologías activas diseñadas para el adulto trabajador.</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-mento-md">
-              <div className="p-mento-sm bg-white/5 rounded-mento-md">
-                <BarChart3 size={24} className="text-mento-accent" />
-              </div>
-              <div>
-                <h4 className="text-body font-bold text-mento-text">Data & Análisis</h4>
-                <p className="text-caption text-mento-muted">Medimos el progreso real con métricas de desempeño industrial.</p>
-              </div>
-            </div>
-          </div>
+        <div className="max-w-3xl mx-auto text-center mb-mento-2xl">
+          <p className="text-caption font-semibold text-mento-muted uppercase tracking-widest mb-mento-sm">
+            Por qué funciona
+          </p>
+          <h2 className="text-h2 font-bold text-mento-text mb-mento-md">
+            No es intuición. Es ciencia del aprendizaje aplicada.
+          </h2>
+          <p className="text-body-lg text-mento-muted">
+            El roleplay con IA no es un formato nuevo por moda. Es la aplicación más directa de lo que la neurociencia cognitiva lleva décadas demostrando sobre cómo los adultos aprenden habilidades complejas.
+          </p>
+        </div>
 
-          <div className="lg:w-2/3 bg-mento-surface/50 border border-white/5 p-mento-xl rounded-mento-lg relative overflow-hidden">
-            {/* Background pattern */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-mento-accent/5 blur-[100px] rounded-full" />
-            
-            <div className="relative z-10">
-              <h2 className="text-h2 font-bold text-mento-text mb-mento-md">
-                El respaldo científico detrás de cada lección.
-              </h2>
-              <p className="text-body-lg text-mento-muted mb-mento-xl">
-                No dejamos el aprendizaje al azar. Cada video, cada evaluación y cada interacción en Mento está diseñada siguiendo principios probados de psicología cognitiva para asegurar que el conocimiento se convierta en hábito.
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-mento-lg">
+          {pillars.map(({ Icon, title, body, citation }) => (
+            <div
+              key={title}
+              className="flex flex-col gap-mento-md p-mento-xl bg-mento-surface/50 border border-white/8 rounded-mento-lg hover:border-white/15 transition-colors"
+            >
+              <div className="w-10 h-10 rounded-mento-md bg-mento-accent/10 flex items-center justify-center flex-shrink-0">
+                <Icon size={20} className="text-mento-accent" strokeWidth={1.75} />
+              </div>
+              <h3 className="text-h4 font-bold text-mento-text">{title}</h3>
+              <p className="text-body text-mento-muted flex-1">{body}</p>
+              <p className="text-[11px] text-mento-muted/50 italic border-t border-white/5 pt-mento-sm">
+                {citation}
               </p>
-              <Button variant="ghost" href="/ciencia">
-                Descubrir nuestra metodología científica →
-              </Button>
             </div>
-          </div>
+          ))}
+        </div>
+
+        <div className="mt-mento-2xl text-center">
+          <Link
+            href="/ciencia"
+            className="text-body font-medium text-mento-muted hover:text-mento-text transition-colors"
+          >
+            Leer el análisis completo de tendencias →
+          </Link>
         </div>
       </Container>
     </Section>

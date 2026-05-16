@@ -7,6 +7,7 @@ import { IndustriesSection } from '@/components/home/Industries';
 import { SocialProofSection } from '@/components/home/SocialProof';
 import { ScienceSection } from '@/components/home/ScienceTeaser';
 import { ForLeadersSection } from '@/components/home/ForTrainers';
+import { ModulesSection } from '@/components/home/Modules';
 import { FinalCTA } from '@/components/home/FinalCTA';
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
     <main className="min-h-screen bg-mento-bg">
       <Header />
       <Hero />
+      <ModulesSection />
       <ProblemSection />
       <HowItWorksSection />
       <IndustriesSection />

@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { cn } from '@/lib/cn';
 
-type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'outline';
+type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'outline' | 'cta';
 type ButtonSize = 'sm' | 'md' | 'lg';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -17,7 +17,9 @@ const variantStyles: Record<ButtonVariant, string> = {
   secondary: 'bg-mento-surface text-mento-text hover:bg-mento-elevated rounded-mento-full',
   ghost: 'bg-transparent text-mento-text hover:bg-white/5 rounded-mento-full',
   outline: 'bg-transparent border border-white/20 text-mento-text hover:border-mento-cta rounded-mento-full',
+  cta: 'bg-mento-cta text-white shadow-[0_15px_30px_rgba(var(--mento-cta-rgb),0.3)] hover:bg-mento-cta-hover rounded-mento-full',
 };
+
 
 const sizeStyles: Record<ButtonSize, string> = {
   sm: 'px-mento-md py-mento-xs text-body',

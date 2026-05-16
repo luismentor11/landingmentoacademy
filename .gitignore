@@ -31,3 +31,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# build/debug tools
+build_output.txt
+ts_errors.txt
+.claude/

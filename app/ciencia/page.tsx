@@ -295,7 +295,7 @@ export default function CienciaPage() {
           {/* Stat destacado */}
           <div className="p-mento-xl bg-mento-surface border border-mento-cta/20 rounded-mento-lg max-w-2xl">
             <p className="text-h4 font-semibold text-mento-text mb-mento-sm">
-              "Para 2026, el mercado de herramientas de roleplay con IA se consolidó como el método preferido para el desarrollo de soft skills en organizaciones."
+              &quot;Para 2026, el mercado de herramientas de roleplay con IA se consolidó como el método preferido para el desarrollo de soft skills en organizaciones.&quot;
             </p>
             <p className="text-[11px] text-mento-muted/50 italic">
               Easygenerator (2026). Best AI roleplay tools for corporate training.

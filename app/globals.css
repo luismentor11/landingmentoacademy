@@ -74,3 +74,42 @@
 .animate-in {
   animation: fadeIn 0.5s ease-out forwards;
 }
+
+.noise {
+  position: relative;
+}
+
+.noise::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.05;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.premium-blur {
+  backdrop-filter: blur(24px) saturate(160%);
+}
+
+.premium-glow {
+  box-shadow: 0 0 30px -10px rgba(197, 87, 122, 0.2);
+}
+
+.premium-glow-white {
+  box-shadow: 0 0 40px -15px rgba(255, 255, 255, 0.15);
+}
+
+.glass-border {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.text-gradient-accent {
+  background: linear-gradient(135deg, #FFF 0%, #C5577A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
